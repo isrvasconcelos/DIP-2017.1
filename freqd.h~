@@ -1,0 +1,61 @@
+#ifndef FILTERS_H
+#define FILTERS_H
+
+#include <iostream>
+#include <opencv2/opencv.hpp>
+#include <fstream>
+#include <math.h>
+
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+using namespace cv;
+
+//*******************************//
+//*********** Auxiliar ***********//
+
+void windowOpen(string imgName, const Mat &img, int xPos, int yPos);
+
+
+//*******************************//
+//*** Img Matrix Manipulation ***//
+
+Mat scaleImage2_uchar(InputArray src);
+Mat fftshift(InputArray src);
+Mat applyLogTransform(InputArray src);
+Mat createWhiteDisk (const int &rows, const int &cols, const int cx, const int cy, const int &radius);
+Mat createCosineImg(const int &rows, const int &cols, const float &freq, const float &theta);
+
+
+//*******************************//
+//********* Experiments *********//
+
+// [Aug/01 and 03]
+void laplacianSharpeningPt1();
+void laplacianSharpeningPt2();
+void spatioGradientRun();
+
+// [Aug/08 and 10]
+void dftRun(bool setNormalize);
+void whiteDisk();
+
+void lpfilter();
+void hpfilter();
+
+void sinusoidImg();
+void sinusoidNoise();
+
+
+//*******************************//
+//********* Home Lesson *********//
+
+
+// [Jul/25]
+void threeChannelHistogram();
+
+// [Ago/01]
+void piecewiseLinearTransform();
+
+
+#endif // FILTERS_H

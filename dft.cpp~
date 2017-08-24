@@ -1,0 +1,17 @@
+#include "dft.h"
+
+void myMeanFilter(InputArray src, OutputArray dst, Size ksize, double sigmaX, double sigmaY=0, int borderType=BORDER_DEFAULT ) {
+
+}
+
+void myMedianFilter( InputArray src, OutputArray dst, int ksize ) {
+
+}
+
+void myGaussianFilter( InputArray src, OutputArray dst, Size ksize, double sigmaX, double sigmaY=0, int borderType=BORDER_DEFAULT ) {
+
+}
+
+void myBilateralFilter( InputArray src, OutputArray dst, int d, double  sigmaColor, double sigmaSpace, int borderType = BORDER_DEFAULT ) {
+
+}

@@ -1,0 +1,46 @@
+#include "filters.h"
+
+void myMeanFilter(InputArray src, OutputArray dst, Size ksize, double sigmaX, double sigmaY=0, int borderType=BORDER_DEFAULT ) {
+
+}
+
+void myMedianFilter( InputArray src, OutputArray dst, int ksize ) {
+
+}
+
+void myGaussianFilter( InputArray src, OutputArray dst, Size ksize, double sigmaX, double sigmaY=0, int borderType=BORDER_DEFAULT ) {
+
+}
+
+void myBilateralFilter( InputArray src, OutputArray dst, int d, double  sigmaColor, double sigmaSpace, int borderType = BORDER_DEFAULT ) {
+
+}
+
+//---------------------------------------------------------------//
+
+void PrintMenu()
+{
+	int myChoice = 0;
+	
+	std::cout << "********** Main Menu **********" << std::endl;
+	std::cout << "(1): Option 1" << std::endl;
+	std::cout << "(2): Option 2" << std::endl;
+	std::cout << "(3): Option 3" << std::endl;
+	std::cin >> myChoice;
+	
+	switch(myChoice)
+	{
+	case 1:
+		//FunctionOne();
+		break;
+	case 2:
+		//FunctionTwo();
+		break;
+	case 3:
+		//FunctionThree();
+		break;
+	default:
+		std::cout << "ERROR! You have selected an invalid choice." << std::endl;
+		break;
+	}
+}
