@@ -1,4 +1,0 @@
-# Em /build:
-cmake ..
-make
-./ilcv_data
