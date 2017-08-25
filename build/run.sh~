@@ -1,4 +1,4 @@
 # Em /build:
 cmake ..
 make
-./activities
+./ilcv_data
