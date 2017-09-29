@@ -95,13 +95,13 @@ int main() {
 //	destroyAllWindows();
 
 
-//	hitOrMiss();
+	hitOrMiss();
 
 
 	//*****************************************************************
 	// Segmentation
 
-	characterSegmentation();
+//	characterSegmentation();
 
 	return 0;
 }
