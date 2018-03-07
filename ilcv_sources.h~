@@ -87,11 +87,6 @@ void characterSegmentation();
 
 // [Mar/06/2018] - REAV1
 void Q01();
-
-
-void Q03();
-Mat transGraphics2(Mat img, int r1, int s1, int r2, int s2);
-
 void Q04();
 
 //*******************************//

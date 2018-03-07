@@ -1513,7 +1513,7 @@ void Q04() {
 		medianBlur(img, img2, ksize);
 		hist = computeHistogram1C(img2);
 		imshow("Parameters", hist);
-		imshow("Rose", img2);
+		imshow("Lena", img2);
 		if((char) waitKey(1)=='q') 
 			break;
 	}

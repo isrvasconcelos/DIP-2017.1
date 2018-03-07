@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/israel/Dropbox/Ufal/2017.1/PDI/ilcv_data/ilcv_sources.cpp
-ilcv_sources.h
-/home/israel/Dropbox/Ufal/2017.1/PDI/ilcv_data/ilcv_sources.h
-
 /home/israel/Dropbox/Ufal/2017.1/PDI/ilcv_data/ilcv_sources.h
 iostream
 -
