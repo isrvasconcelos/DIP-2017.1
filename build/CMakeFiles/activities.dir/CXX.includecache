@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/israel/Dropbox/Ufal/2017.1/PDI/ilcv_data/ilcv_sources.cpp
+ilcv_sources.h
+/home/israel/Dropbox/Ufal/2017.1/PDI/ilcv_data/ilcv_sources.h
+
 /home/israel/Dropbox/Ufal/2017.1/PDI/ilcv_data/ilcv_sources.h
 iostream
 -
@@ -19,10 +23,6 @@ stdlib.h
 -
 time.h
 -
-
-/home/israel/Dropbox/Ufal/2017.1/PDI/ilcv_data/main.cpp
-ilcv_sources.h
-/home/israel/Dropbox/Ufal/2017.1/PDI/ilcv_data/ilcv_sources.h
 
 /usr/local/include/opencv/cxcore.h
 opencv2/core/core_c.h

@@ -101,7 +101,7 @@ int main() {
 
 	//*****************************************************************
 	// Canny and Hough for Edge Detection
-	houghLineTransform();
+//	houghLineTransform();
 
 	//*****************************************************************
 	// REAV1 

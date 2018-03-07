@@ -1419,15 +1419,15 @@ void Q03() {
 	Mat hist;
 	Mat img_new = img.clone();
 
-	int e = 4, k0 = 40, k1 = 2, k2 = 40;
+	int e = 6, k0 = 50, k1 = 1, k2 = 100;
 
 	createTrackbar("e", "Parameters", &e, 100, 0, 0);
-	createTrackbar("k0 x(0.01)", "Parameters", &k0, 1000, 0, 0);
-	createTrackbar("k1 x(0.01)", "Parameters", &k1, 1000, 0, 0);
-	createTrackbar("k2 x(0.01)", "Parameters", &k2, 1000, 0, 0);
+	createTrackbar("k0/1000", "Parameters", &k0, 1000, 0, 0);
+	createTrackbar("k1/1000", "Parameters", &k1, 1000, 0, 0);
+	createTrackbar("k2/1000", "Parameters", &k2, 1000, 0, 0);
 
 	while(true) {
-		img_new = transGraphics2(img_new, e, k1, k2, k2);
+		img_new = transGraphics2(img, e, k0, k1, k2);
 
 		imshow("My Sample Picture", img);
 		imshow("Parameters", img_new);
@@ -1452,9 +1452,9 @@ Mat transGraphics2(Mat img, int e, int k0, int k1, int k2) {
 	float thisPixel = 0;
 	int imgSize = img.cols*img.rows;
 
-	float K0 = k0*0.01;
-	float K1 = k1*0.01;
-	float K2 = k2*0.01;
+	float K0 = k0*0.001;
+	float K1 = k1*0.001;
+	float K2 = k2*0.001;
 
 	// Evaluating Mean
 	for(int i=0 ; i < img2.cols ; i++) {
@@ -1487,16 +1487,17 @@ Mat transGraphics2(Mat img, int e, int k0, int k1, int k2) {
 			for(int k=0 ; k < kernelSize ; k++) {
 				for(int l=0 ; l < kernelSize; l++) {
 					thisPixel=img2.at<uchar>(i+k, j+l);
-					localStdDev = localStdDev + ((localStdDev-thisPixel)*(localStdDev-thisPixel) / (9-1));
+					localStdDev = localStdDev + (pow((localMean-thisPixel),2) / (9-1));
 				}
 			}
 
+			localStdDev = sqrt(localStdDev);
+
 			if((localMean <= K0*globalMean) && (K1*globalStdDev < localStdDev) && (K2*globalStdDev > localStdDev)) {
-				cout << "Filtering" << endl;
+				//cout << "Filtering" << endl;
 				for(int k=0 ; k < kernelSize ; k++) {
 					for(int l=0 ; l < kernelSize; l++) {
-							thisPixel=img2.at<uchar>(i+k, j+l);
-							thisPixel = thisPixel*e;
+							img2.at<uchar>(i+k, j+l)=e*img2.at<uchar>(i+k, j+l);
 					}
 				}
 			}
