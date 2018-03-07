@@ -90,7 +90,7 @@ void Q01();
 
 
 void Q03();
-Mat transGraphics2(Mat img, int r1, int s1, int r2, int s2);
+Mat transGraphics2(Mat img, int e, int k0, int k1, int k2);
 
 void Q04();
 

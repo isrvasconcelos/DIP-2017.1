@@ -1355,6 +1355,11 @@ void colorSegmentation() {
 
 //*************************************************************************//
 // REAV1 //
+    // Criar uma imagem 100x100 contendo um padrão listrado preto e branco,
+    // assim como o ilustrado na imagem 'q01.png'. O código deve contemplar um
+    // slider que varia de 0 a 90, rotacionando o padrão, resultando numa
+    // imagem como aquela ilustrada no arquivo 'build/israel_q01.png'.
+
 
 void Q01() {
 
@@ -1384,6 +1389,24 @@ void Q01() {
 
 //*************************************************************************//
 
+    // Q03
+    // Considere a imagem "build/tungsten.tif".
+    // Deseja-se melhorar áres que têm:
+    // 1 - baixa intensidade média (escuras) em relação à
+    // toda a imagem (média total da imagem).
+    // 2 - Têm baixo contraste (i. e., baixa variância).
+    // 3 - Não têm contraste constante.
+    // Aplique a transformação especificada na figura "build/contrast.png",
+    // onde:
+    // - S_{xy} é uma região 3x3.
+    // - E, k_0, k_1 e k_2 são escalares.
+    // - m_G é a média global da imagem.
+    // - m_{S_{xy}} é a média na região S_{xy}.
+    // - \sigma_G é o desvio padrão global da imagem
+    // - \sigma_{S_{xy}} é o desvio padrão na região S_{xy}
+    // O programa deve ser interativo. Isto é, o usuário poderá alterar
+    // os valores das constantes da equação para analizar o resultado,
+    // assim como ilustrado na imagem "build/tungsten_solution.png".
 void Q03() {
 
 	namedWindow("My Sample Picture", WINDOW_AUTOSIZE);
@@ -1412,6 +1435,8 @@ void Q03() {
 		if((char) waitKey(1)=='q') 
 			break;
 	}
+
+	imwrite("israel_q03.png", img_new);
 }
 
 Mat transGraphics2(Mat img, int e, int k0, int k1, int k2) {
@@ -1482,6 +1507,9 @@ Mat transGraphics2(Mat img, int e, int k0, int k1, int k2) {
 }
 
 //*************************************************************************//
+    // Q04
+    /// Carregar a imagem "build/rose.tif" e filtrar os ruídos presentes na imagem.
+    /// Um resultado razoável pode ser visto na imagem "build/israel_q04.png".
 
 void Q04() {
 
